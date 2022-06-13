@@ -24,7 +24,7 @@ C语言是一门面向过程的语言，我们在用C语言做开发的时候会
 
 5. 代码组织上使用一个.c和.h来表达一个类，文件名和类名对应
 
-![image-20220608223533780](C:\Users\wangfeitao\AppData\Roaming\Typora\typora-user-images\image-20220608223533780.png)
+![image-20220608223533780](https://user-images.githubusercontent.com/80186561/173372371-27cbfee3-bbba-480b-a79b-707cf03714aa.png)
 
 对应上面的Person类，我们使用C语言的实现代码如下：
 
@@ -107,7 +107,7 @@ void UsePerson(void)
     Person preson;
     Person_Init(&person);
     
-	Person_Introduce(&person);
+    Person_Introduce(&person);
 }
 ```
 
@@ -186,7 +186,8 @@ Create方法的实现往往是通过动态申请的方式，因此我们往往�
 
 **实现类之间的关系**
 
-![image-20220608223741369](C:\Users\wangfeitao\AppData\Roaming\Typora\typora-user-images\image-20220608223741369.png)
+![image-20220608223741369](https://user-images.githubusercontent.com/80186561/173372604-d9dabafe-c810-41c7-a65a-45862fe4fa91.png)
+
 
 **依赖(use a)**
 
@@ -203,7 +204,7 @@ Create方法的实现往往是通过动态申请的方式，因此我们往往�
 void Teacher_Introduce(const Teacher *self, canst Student *student)
 {
 	Person_Introduce(&self->base);
-	printf("I am Teacher. I %steach %s", Klasss_IsEqual(self->klass, 							   Student_GetKlass(student)) ? "" : "don't", Student_GetName(student));
+	printf("I am Teacher. I %steach %s", Klasss_IsEqual(self->klass, Student_GetKlass(student)) ? "" : "don't", Student_GetName(student));
 }
 ```
 
@@ -319,8 +320,7 @@ void Student_Introduce(const Student *self)
 
 在面向对象编程思想中，多态表达的是具有共性的类型，在执行相同的行为时，会体现出不同的实现方式。可以简称为：**相同的行为，不同的实现**。比如：同样看到对面过来一个美女，男人和女人的想法是不一样的。
 
-![img](http://mms0.baidu.com/it/u=1442657790,192680642&fm=253&app=138&f=JPG&fmt=auto&q=75?w=613&h=500)
-
+![image](https://user-images.githubusercontent.com/80186561/173372136-6d42fb90-08f0-4e8a-bf71-1991dcf8b4cf.png)
 
 
 多态是面向对象三大特性之一，表达的是“变化”。面向丰富和不断变化的问题域，多态可以让我们的程序能更好的去应对这些变化，恰当的使用多态技术，可以显著提升程序的可扩展和可维护性。
@@ -329,7 +329,8 @@ C++中实现多态是通过虚函数，用C语言怎么实现多态呢？假设�
 
 的内容不一样。我们要用代码表达以下这个过程。
 
-![image-20220608230531443](C:\Users\wangfeitao\AppData\Roaming\Typora\typora-user-images\image-20220608230531443.png)
+![image-20220608230531443](https://user-images.githubusercontent.com/80186561/173372722-15b62f78-318d-4b7f-a34e-240cbca58d7a.png)
+
 
 ```c
 // attendee.h
@@ -554,7 +555,7 @@ C语言中实现多态的诀窍就是用函数指针类型的成员来表达具�
 
 答案是通过container_of（linux内核实现的一个宏，作用是在知道结构体成员地址的前提下得到结构体的地址，可以参考linux内核的实现自己实现一个），实例代码：
 
-![image-20220608230945096](C:\Users\wangfeitao\AppData\Roaming\Typora\typora-user-images\image-20220608230945096.png)
+![image-20220608230945096](https://user-images.githubusercontent.com/80186561/173372865-2d9499f5-3cd3-41e9-9356-410c222fe7bd.png)
 
 ```c
 #define offset_of(type, member) ((size_t)&((type*)0)->member)
