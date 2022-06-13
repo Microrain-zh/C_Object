@@ -334,7 +334,6 @@ C++中实现多态是通过虚函数，用C语言怎么实现多态呢？假设�
 
 ```c
 // attendee.h
-
 typedef struct Attendee Attendee;
 
 typedef struct AttendeeOps {
@@ -488,7 +487,6 @@ Attendee* AttendttFactory_Create(Occupation occupation, const char *name, int ag
 } while(0)
 
 // attendee_factory.c
-
 #include "attendee_factory.h"
 #include "student.h"
 #include "teacher.h"
@@ -506,7 +504,6 @@ Attendee* AttendttFactory_Create(Occupation occupation, const char *name, int ag
 }
 
 // main.c
-
 #include "attendee_factory.h"
 
 int main(void)
@@ -567,14 +564,12 @@ C语言中实现多态的诀窍就是用函数指针类型的成员来表达具�
 		
 
 // father.h
-
 typedef struct Father Father;
 typedef struct Father {
     void (*PlayWithSon)(Father *self);
 } Father;
 
 //employee.h
-
 typedef struct Employee Employee;
 typedef struct Employee {
     void (*Work)(Employee *self);
