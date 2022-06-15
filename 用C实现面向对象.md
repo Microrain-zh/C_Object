@@ -635,3 +635,8 @@ Man ZhangSan work.
 3. 用struct实现类，用struct包含来实现has-a和is-a关系。指针类型表达生命周期不同，值类型表达生命周期相同。
 4. 尽可能利用static、前置申明提升程序的封装性，降低耦合。
 5. 尽可能利用const提升程序的健壮性。
+
+
+[UML六种关系](https://www.jianshu.com/p/f35fab1640c6)
+
+[UML类图几种关系的总结](http://uml.org.cn/oobject/201609062.asp)
